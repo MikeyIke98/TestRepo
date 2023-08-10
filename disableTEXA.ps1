@@ -6,6 +6,15 @@ if (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
     exit
 }
 
+
+Get-Process | Where-Object { $_.ProcessName -like "Mstart5*" } | Stop-Process
+Get-Process | Where-Object { $_.ProcessName -like "SWUpdate*" } | Stop-Process
+Get-Process | Where-Object { $_.ProcessName -like "start5*" } | Stop-Process
+Get-Process | Where-Object { $_.ProcessName -like "Autossimo*" } | Stop-Process
+
+
+
+
 # Define the name of the driver you want to disable
 $driverName = "TEXA Navigator Nano  TCXE01"
 $driverName2 = "Sentinel USB Key"
